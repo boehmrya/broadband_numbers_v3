@@ -28,7 +28,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.4em;
-  z-index: 10;
+  z-index: 30;
 }
 
 .pagination li {
