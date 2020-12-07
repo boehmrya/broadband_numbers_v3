@@ -60,7 +60,7 @@ jQuery(function($){
     afterRender:function() {}
   });
 
-  $('.top-section-text .down-arrow').on('click', function() {
+  $('.top .down-arrow').on('click', function() {
     $.scrollify.move("#speed");
   });
 
