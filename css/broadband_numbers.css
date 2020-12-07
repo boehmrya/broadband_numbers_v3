@@ -99,14 +99,16 @@ h2.story-title {
 }
 
 .wrap {
-  padding: 45px 15px;
+  padding: 0px 15px 45px 15px;
   width: 1170px;
   margin: 0 auto;
   height: 100%;
+  position: relative;
+  z-index: 10;
 }
 
-.top .wrap {
-  padding-top: 0;
+.intro {
+  padding-top: 10vh;
 }
 
 .content {
@@ -517,7 +519,7 @@ h2.story-title {
 }
 */
 
-.story.image-section .image-wrap {
+.story {
   background-size: cover!important;
   background-attachment: fixed;
   background-position: 50%;
@@ -526,7 +528,15 @@ h2.story-title {
   width: 100%;
 }
 
-.story.top.image-section .image-wrap {
+.story.adoption {
+  background-image: url('../images/adoption_background.jpg');
+}
+
+.story.customers {
+  background-image: url('../images/customers_background.jpg');
+}
+
+.story.top {
   background-image: url('../images/bb_numbers_header_3.jpg');
 }
 
@@ -536,44 +546,6 @@ h2.story-title {
 
 .story.image-section.stats-row .image-wrap {
   background-image: url('../images/freeway_dusk.jpg');
-}
-
-.story.image-section .image-wrap .wrap {
-  padding-bottom: 0;
-}
-
-.story.image-section .stat-block {
-  opacity: 0;
-}
-
-.story.image-section.active .stat-block {
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.story.image-section .stat-block.one {
-  position: relative;
-  top: 20%;
-  transform: translateY(-20%);
-}
-
-.story.image-section .stat-block.two {
-  position: relative;
-  top: 60%;
-  transform: translateY(-60%);
-  transition-delay: 500ms;
-}
-
-.story.image-section .stat-line {
-  color: #fff;
-  text-align: center;
-  position: relative;
-}
-
-.story.image-section .stat-line.one {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  font-weight: bold;
 }
 
 .story.image-section .stat-line.two {
@@ -622,16 +594,10 @@ h2.story-title {
 
 .story-wrap {
   height: 100vh;
-  /*
-  overflow: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat(100vh);
-  */
 }
 
 .story {
   height: 100vh;
-  /*scroll-snap-align: start;*/
   position: relative;
 }
 
@@ -645,15 +611,15 @@ h2.story-title {
 }
 
 .story.white {
-  background: #fff;
+  background-color: #fff;
 }
 
 .story.gray {
-  background: #F5F5F8;
+  background-color: #F5F5F8;
 }
 
 .story.blue {
-  background: #343F49;
+  background-color: #222943;
 }
 
 .story.blue .stat-source {
@@ -683,6 +649,7 @@ h2.section-title {
   font-size: 1.5rem;
   line-height: 2rem;
   margin-top: 22.5px;
+  max-width: 600px;
 }
 
 .section-text p {
