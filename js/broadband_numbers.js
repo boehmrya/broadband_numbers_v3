@@ -57,13 +57,12 @@ jQuery(function($){
         tickLabels, xAxis, yAxis, initialArea, area, svg, chartwidth;
 
     // broadband adoption data
-    data = [{"date":"2005", "speed": 16},
-            {"date":"2010", "speed": 50},
+    data = [{"date":"2010", "speed": 50},
             {"date":"2015", "speed": 1000},
             {"date":"2020", "speed": 2000}];
 
     // Set the margins
-    margin = {top: 20, right: 20, bottom: 40, left: 20},
+    margin = {top: 100, right: 40, bottom: 40, left: 20},
     width = 1140 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     viewBox = "0 0 1140 500";
@@ -133,28 +132,89 @@ jQuery(function($){
         .attr("r", 8)
         .attr("fill", "#5ac8e7");
 
+    svg.selectAll(".speed-number")
+      .data(data)  // This is the nested data call
+      .enter()
+        .append("text")
+          .attr("class", "speed-number")
+          .attr("x", function(d, i) {
+            var diff = 10;
+            return x(d.date) + diff;
+          })
+          .attr("y", function(d, i) {
+            var diff = 20;
+            if (i == 2) {
+              diff += 20;
+            }
+            return y(d.speed) + diff;
+          })
+          .attr("fill", "#fff")
+          .text(function(d) {
+            if (d.speed >= 1000) {
+              return d.speed / 1000;
+            }
+            else {
+              return d.speed;
+            }
+          });
+
+    svg.selectAll(".speed-label")
+      .data(data)  // This is the nested data call
+      .enter()
+        .append("text")
+          .attr("class", "speed-label")
+          .attr("x", function(d, i) {
+            var diff = 0;
+            if (i != 0) {
+              diff -= 5;
+            }
+            return x(d.date) + diff;
+          })
+          .attr("y", function(d, i) {
+            var diff = 50;
+            if (i == 2) {
+              diff += 20;
+            }
+            return y(d.speed) + diff;
+          })
+          .attr("fill", "#fff")
+          .text(function(d, i) {
+            if (d.speed >= 1000) {
+              return "GBPS";
+            }
+            else {
+              return "MBPS";
+            }
+          });
+
+
 
      //Initially set the lines to not show
-     //d3.selectAll(".line").style("opacity",0);
-
+     d3.selectAll(".line").style("opacity",0);
 
       //Select All of the lines and process them one by one
-      /*
-  		d3.selectAll(".line").each(function(d,i) {
+  	  d3.selectAll(".line").each(function(d,i) {
+        d3.select(this).style("opacity","1");
 
   		  // Get the length of each line in turn
   		  var totalLength = d3.select(".line").node().getTotalLength();
 
-  			d3.selectAll("#line" + i)
-        .attr("stroke-dasharray", totalLength + " " + totalLength)
-  			  .attr("stroke-dashoffset", totalLength)
-  			  .transition()
-  			  .duration(2000)
-  			  .ease("linear") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
-  			  .attr("stroke-dashoffset", 0)
-  			  .style("stroke-width", 2);
+  			d3.selectAll(".line")
+          .attr("stroke-dasharray", totalLength + " " + totalLength)
+    			  .attr("stroke-dashoffset", totalLength)
+    			  .transition()
+    			  .duration(2000)
+    			  .ease("ease-in") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
+    			  .attr("stroke-dashoffset", 0)
+    			  .style("stroke-width", 3);
   		});
-      */
+
+      // reveal text
+      d3.selectAll("svg.svgele .speed-number, svg.svgele .speed-label")
+        .transition()
+        .delay(1000)
+        .duration(3000)
+        .style("opacity", 1);
 
   }
 
