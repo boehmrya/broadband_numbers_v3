@@ -478,38 +478,13 @@ h2.story-title {
   transform: translateY(0) rotate(45deg);
 }
 
-.story-wrap {
-  height: 100vh;
-}
-
 .story {
   height: 100vh;
   position: relative;
 }
 
-.story .image {
-  background: #000;
-  position: relative;
-}
-
-.story img {
-  opacity: 0.5;
-}
-
-.story.white {
-  background-color: #fff;
-}
-
-.story.gray {
-  background-color: #F5F5F8;
-}
-
 .story.blue {
   background-color: #222943;
-}
-
-.story.blue .stat-source {
-  color: #fff;
 }
 
 h2.section-title {
@@ -607,11 +582,44 @@ h2.section-title {
 }
 
 .stat-text {
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   line-height: 1.625rem;
   color: #fff;
   float: left;
   width: 350px;
+}
+
+.chart-source {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 22.5px;
+}
+
+.static-chart {
+  width: 680px;
+  margin-right: 90px;
+  float: left;
+}
+
+.static-chart-stat {
+  float: left;
+  width: 370px;
+  text-align: right;
+  font-weight: bold;
+  margin-top: 90px;
+}
+
+.chart-stat-num {
+  font-size: 4.375rem;
+  line-height: 4.375rem;
+  color: #fff;
+}
+
+.chart-stat-text {
+  font-size: 1.5rem;
+  line-height: 1.625rem;
+  color: #fff;
+  margin-top: 11.25px;
 }
 
 @keyframes bounce {
