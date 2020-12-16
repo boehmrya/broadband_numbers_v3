@@ -532,8 +532,8 @@ h2.section-title {
 }
 
 .section-text {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.375rem;
+  line-height: 1.625rem;
   margin-top: 22.5px;
   max-width: 800px;
 }
@@ -599,16 +599,16 @@ h2.section-title {
 
 .stat-num {
   color: #5AC9E7;
-  font-size: 4rem;
-  line-height: 4rem;
+  font-size: 4.375rem;
+  line-height: 4.375rem;
   float: left;
   width: 130px;
   margin-right: 45px;
 }
 
 .stat-text {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.375rem;
+  line-height: 1.625rem;
   color: #fff;
   float: left;
   width: 350px;
