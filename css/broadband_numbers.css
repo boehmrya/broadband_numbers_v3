@@ -223,7 +223,7 @@ h2.story-title {
 .cost-chart .axis path,
 .cost-chart .axis line   {
   fill: none;
-  stroke: #000;
+  stroke: #fff;
   shape-rendering: crispEdges;
 }
 
@@ -382,17 +382,6 @@ h2.story-title {
 
 .story.top {
   background-image: url('../images/bb_numbers_header_3.jpg');
-}
-
-.story.speed text.speed.num {
-  font-size: 32px;
-  font-weight: bold;
-  opacity: 0;
-}
-
-.story.speed text.speed.label {
-  font-size: 16px;
-  opacity: 0;
 }
 
 .adoption-chart .y.axis .tick line,
@@ -617,7 +606,7 @@ h2.section-title {
   animation-iteration: 1;
   animation-name: outline, fillin;
   animation-duration: 5s, .5s;
-  animation-delay: 0s, 4.5s;
+  animation-delay: 0s, 4s;
 }
 
 .animated-chart-stats {
@@ -628,7 +617,7 @@ h2.section-title {
 }
 
 .animated-chart-stat {
-  margin-top: 22.5px;
+  margin-top: 33.75px;
 }
 
 .animated-chart-stat .chart-stat-num {
@@ -644,6 +633,19 @@ h2.section-title {
   width: 337.5px;
   font-size: 1.5rem;
   line-height: 1.625rem;
+}
+
+.speed-chart .line {
+  stroke-width: 3;
+}
+
+.speed-chart .x.axis text {
+  fill: #ccc;
+}
+
+.speed-chart .x.axis .tick line,
+.speed-chart .x.axis path {
+  opacity: 0;
 }
 
 @keyframes outline{
@@ -663,14 +665,7 @@ h2.section-title {
 
 
 @media all and (min-width: 1200px) {
-  .speed-chart {
-    min-height: 600px;
-  }
-
   .speed-chart,
-  .adoption-chart,
-  .customers-chart,
-  .infrastructure-chart,
   .cost-chart {
     min-height: 500px;
   }
@@ -689,11 +684,6 @@ h2.section-title {
 @media all and (min-width: 992px) and (max-width: 1199px) {
   .wrap {
     width: 970px;
-  }
-
-  .speed-chart,
-  .infrastructure-chart {
-    min-height: 495px;
   }
 
   .adoption-chart,
