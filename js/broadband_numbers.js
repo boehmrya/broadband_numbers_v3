@@ -43,15 +43,6 @@ jQuery(function($){
       var pagination_items = $('.pagination li');
       pagination_items.children('a').removeClass('active');
       pagination_items.eq(index).children('a').addClass('active');
-
-      // switch pagination color based on section color
-      $('body').removeClass('pagination-white pagination-blue');
-      if (this_elem.hasClass('white') || this_elem.hasClass('gray')) {
-        $('body').addClass('pagination-blue');
-      }
-      else {
-        $('body').addClass('pagination-white');
-      }
     },
     after:function(index, elements) {
 
@@ -61,7 +52,7 @@ jQuery(function($){
   });
 
   $('.top .down-arrow').on('click', function() {
-    $.scrollify.move("#speed");
+    $.scrollify.move("#adoption");
   });
 
   $('.pagination a').on('click', function() {

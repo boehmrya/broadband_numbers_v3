@@ -44,10 +44,6 @@ img {
   padding: 4px;
 }
 
-.pagination-blue .pagination a {
-  color: #343F49;
-}
-
 .pagination a:after {
   -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
@@ -122,14 +118,12 @@ h2.story-title {
 .wrap::after,
 .stats-section::after,
 .chart-block::after,
-.section-content::after {
+.section-content::after,
+.stat::after,
+.animated-chart-stat::after {
   content: "";
   clear: both;
   display: table;
-}
-
-.chart-block {
-  margin-top: 22.5px;
 }
 
 .speed-chart {
@@ -265,50 +259,6 @@ h2.story-title {
   display: inline;
 }
 
-.text-group.hide,
-.text-group.hide circle,
-.text-group.hide .text-label {
-  display: none;
-  visibility: hidden;
-}
-
-.text-group.reveal {
-  opacity: 0;
-  transition: all 0.5s;
-  transition-delay: 0.5s;
-  transition-timing-function: ease;
-}
-
-.text-group.reveal.animated {
-  opacity: 1;
-}
-
-.text-group.blue circle {
-  fill: #5AC9E7;
-}
-
-.text-group.red circle {
-  fill: #E71B4F;
-}
-
-.text-stat {
-  fill: #fff;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.text-label {
-  fill: #fff;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.text-stat-suffix {
-  fill: #fff;
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .cost-chart-bar-label {
   font-size: 3.5rem;
   line-height: 3.5rem;
@@ -432,12 +382,6 @@ h2.story-title {
 
 .story.top {
   background-image: url('../images/bb_numbers_header_3.jpg');
-}
-
-.story.image-section .stat-line.two {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  margin-top: 22.5px;
 }
 
 .story.speed text.speed.num {
@@ -631,6 +575,89 @@ h2.section-title {
   }
   60% {
     transform: translateY(-15px) rotate(45deg);
+  }
+}
+
+.investment .animated-chart {
+  float: left;
+  width: 500px;
+  margin-right: 90px;
+}
+
+.investment .animation-container {
+  position: relative;
+  display: inline-block;
+}
+
+.investment .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.investment .map-outline {
+  fill: #E71B4F;
+  stroke: #E71B4F;
+  stroke-miterlimit:10;
+  fill-rule:evenodd;
+  fill-opacity: 0;
+}
+
+.active.investment svg polygon {
+  stroke-width: 2px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: outline, fillin;
+  animation-duration: 5s, .5s;
+  animation-delay: 0s, 4.5s;
+}
+
+.animated-chart-stats {
+  float: left;
+  width: 550px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.animated-chart-stat {
+  margin-top: 22.5px;
+}
+
+.animated-chart-stat .chart-stat-num {
+  float: left;
+  width: 190px;
+  font-size: 4.375rem;
+  line-height: 4.375rem;
+  margin-right: 22.5px;
+}
+
+.animated-chart-stat .chart-stat-text {
+  float: left;
+  width: 337.5px;
+  font-size: 1.5rem;
+  line-height: 1.625rem;
+}
+
+@keyframes outline{
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fillin {
+  from {
+    fill-opacity: 0;
+  }
+
+  to {
+    fill-opacity: 1;
   }
 }
 
