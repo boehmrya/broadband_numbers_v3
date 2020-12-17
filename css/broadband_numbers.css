@@ -662,6 +662,44 @@ h2.section-title {
   opacity: 0;
 }
 
+.networks .animated-chart {
+  float: right;
+  width: 300px;
+  margin-left: 90px;
+}
+
+.networks .animated-chart-stats {
+  width: 650px;
+}
+
+.networks .animated-chart-stat.one {
+  margin-top: 0;
+}
+
+.networks .animated-chart-stat .chart-stat-text {
+  width: 437.5px;
+}
+
+.networks .house-outline {
+  fill: #E71B4F;
+  stroke: #E71B4F;
+  stroke-miterlimit:10;
+  fill-rule:evenodd;
+  fill-opacity: 0;
+}
+
+.active.networks svg path {
+  stroke-width: 2px;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration: 1;
+  animation-name: outline, fillin;
+  animation-duration: 5s, .5s;
+  animation-delay: 0s, 2s;
+}
+
 @keyframes outline{
   to{
     stroke-dashoffset: 0;
@@ -676,7 +714,6 @@ h2.section-title {
     fill-opacity: 1;
   }
 }
-
 
 @media all and (min-width: 1200px) {
   .speed-chart,
