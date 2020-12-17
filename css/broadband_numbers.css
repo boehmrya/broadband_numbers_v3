@@ -772,18 +772,15 @@ h2.section-title {
   }
 }
 
+
 @media all and (min-width: 1200px) {
   .speed-chart,
   .cost-chart {
-    min-height: 500px;
+    min-height: 400px;
   }
 }
 
 @media all and (max-width: 1199px) {
-  .shape-wrap .cost-percent-num {
-    font-size: 2.75rem;
-    line-height: 2.75rem;
-  }
   .pagination {
     right: 10px;
   }
@@ -793,90 +790,22 @@ h2.section-title {
   .wrap {
     width: 970px;
   }
-
-  .adoption-chart,
-  .customers-chart,
   .cost-chart {
-    min-height: 415px;
+    min-height: 200px;
   }
-
-  .story.cost .chart-wrap {
-    width: 520px;
-  }
-
-  .story.cost .shape-wrap {
-    width: 250px;
-  }
-
-  .shape-wrap .box {
-    width: 250px;
-  }
-
-  .shape-wrap .box.full {
-    height: 220px;
-  }
-
-  .shape-wrap .down-arrow {
-    border-left: 125px solid transparent;
-    border-right: 125px solid transparent;
-    border-top: 125px solid #5AC9E7;
-  }
-
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   .wrap {
     width: 750px;
   }
-
-  .story.cost .chart-wrap {
-    width: 65%;
-    margin-right: 5%;
-  }
-
-  .story.cost .shape-wrap {
-    width: 25%;
-    max-width: 200px;
-  }
-
-  .shape-wrap .box {
-    width: 200px;
-  }
-
-  .shape-wrap .box.full {
-    height: 200px;
-  }
-
-  .shape-wrap .down-arrow {
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 100px solid #5AC9E7;
-  }
 }
 
 @media all and (max-width: 991px) {
-  .wrap {
-    width: 100%;
-    padding: 45px;
-  }
-  .story.speed .chart-text {
-    position: static;
-    max-width: none;
-  }
 
-  h2.story-title {
+  h2.section-title {
     font-size: 2rem;
     line-height: 2.25rem;
-  }
-
-  .story.image-section .stat-line.one {
-    font-size: 2rem;
-    line-height: 2.25rem;
-  }
-
-  .stat-num {
-    font-size: 3.5rem;
-    line-height: 2.75rem;
   }
 }
 
