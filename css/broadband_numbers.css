@@ -131,11 +131,8 @@ h2.story-title {
 }
 
 .top-section-text {
-  position: absolute;
   color: #fff;
-  top: 10vh;
-  width: 100%;
-  z-index: 20;
+  padding-top: 10vh;
 }
 
 .top-section-text p {
@@ -784,6 +781,33 @@ h2.section-title {
   .pagination {
     right: 10px;
   }
+
+  .stat {
+    width: 447.5px;
+  }
+
+  .stat.one,
+  .stat.three {
+    margin-right: 45px;
+  }
+
+  .stat.one,
+  .stat.two {
+    margin-bottom: 45px;
+  }
+
+  .stat-num {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    width: 110px;
+    margin-right: 22.5px;
+  }
+
+  .stat-text {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    width: 315px;
+  }
 }
 
 @media all and (min-width: 992px) and (max-width: 1199px) {
@@ -802,41 +826,92 @@ h2.section-title {
 }
 
 @media all and (max-width: 991px) {
+  .top-title {
+    font-size: 1.75rem;
+  }
+
+  h1.page-title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 
   h2.section-title {
     font-size: 2rem;
     line-height: 2.25rem;
   }
+
+  .stat {
+    width: 337.5px;
+  }
+
+  .stat-text {
+    width: 205px;
+  }
+
+  .stat-text br {
+    display: none;
+  }
 }
 
 @media all and (max-width: 767px) {
-  .story.cost .chart-wrap {
-    width: 100%;
-    margin-right: 0;
+  .wrap {
+    width: auto;
   }
 
-  .story.cost .shape-wrap {
-    display: none;
-    visibility: hidden;
-  }
-
-  .stat-col br {
-    display: none;
-  }
-  .stat-col.one,
-  .stat-col.three {
-    float: none;
-    margin-left: 0;
-  }
-  .stat-col.two {
-    float: none;
-    margin-right: 0;
-  }
-  .stat-wrap {
-    margin: 0 auto;
-  }
   .pagination {
+    top: 10px;
+    transform: none;
+  }
+
+  .pagination li {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .section-text {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .section-content {
+    margin-top: 45px;
+  }
+
+  .section-link a {
+    text-decoration: underline;
+    padding-bottom: 0;
+    color: #5AC9E7;
+    font-size: 1.125rem;
+  }
+
+  .section-link a:after {
     display: none;
+  }
+
+  .stat {
+    width: 48%;
+  }
+
+  .stat.one,
+  .stat.three {
+    margin-right: 4%;
+  }
+
+  .stat.one,
+  .stat.two {
+    margin-bottom: 4%;
+  }
+
+  .stat-num {
+    float: none;
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 11.25px;
+  }
+
+  .stat-text {
+    float: none;
+    width: auto;
   }
 }
 
@@ -844,4 +919,35 @@ h2.section-title {
   .wrap {
     padding: 22.5px;
   }
+}
+
+@media all and (max-width: 499px) {
+  .intro {
+    padding-top: 33.75px;
+  }
+
+  h2.section-title {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  .section-content {
+    margin-top: 22.5px;
+  }
+
+  .stat-num {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .stat-text {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: normal;
+  }
+
+  .section-title br {
+    display: none;
+  }
+
 }

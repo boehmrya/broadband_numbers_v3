@@ -187,8 +187,6 @@ jQuery(function($){
             }
           });
 
-
-
      //Initially set the lines to not show
      d3.selectAll(".line").style("opacity",0);
 
