@@ -130,6 +130,10 @@ h2.story-title {
   width: 100%;
 }
 
+.speed-chart svg {
+  overflow: visible;
+}
+
 .top-section-text {
   color: #fff;
   padding-top: 10vh;
@@ -652,16 +656,8 @@ h2.section-title {
   margin-left: 90px;
 }
 
-.networks .animated-chart-stats {
-  width: 650px;
-}
-
 .networks .animated-chart-stat.one {
   margin-top: 0;
-}
-
-.networks .animated-chart-stat .chart-stat-text {
-  width: 437.5px;
 }
 
 .networks .house-outline {
@@ -769,21 +765,38 @@ h2.section-title {
   }
 }
 
+@media all and (max-width: 1249px) {
+  .pagination {
+    right: 10px;
+  }
+}
 
 @media all and (min-width: 1200px) {
   .speed-chart,
   .cost-chart {
     min-height: 400px;
   }
+
+  .networks .animated-chart-stats {
+    width: 650px;
+  }
+
+  .networks .animated-chart-stat .chart-stat-text {
+    width: 437.5px;
+  }
 }
 
 @media all and (max-width: 1199px) {
-  .pagination {
-    right: 10px;
-  }
-
   .stat {
     width: 447.5px;
+  }
+
+  .wifi .stat-num {
+    width: 150px;
+  }
+
+  .wifi .stat-text {
+    width: 275px;
   }
 
   .stat.one,
@@ -807,6 +820,48 @@ h2.section-title {
     font-size: 1.25rem;
     line-height: 1.5rem;
     width: 315px;
+  }
+
+  .static-chart {
+    width: 560px;
+    margin-right: 45px;
+  }
+
+  .static-chart-stat {
+    width: 335px;
+    margin-top: 45px;
+  }
+
+  .static-chart-stat .chart-stat-num {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .static-chart-stat .chart-stat-text {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .investment .animated-chart {
+    width: 415px;
+    margin-right: 45px;
+  }
+
+  .animated-chart-stats {
+    width: 480px;
+  }
+
+  .animated-chart-stat .chart-stat-num {
+    width: 150px;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .animated-chart-stat .chart-stat-text {
+    width: 307.5px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-top: 5.5px;
   }
 }
 
@@ -840,6 +895,10 @@ h2.section-title {
     line-height: 2.25rem;
   }
 
+  .wifi .stat-text {
+    width: 165px;
+  }
+
   .stat {
     width: 337.5px;
   }
@@ -851,6 +910,54 @@ h2.section-title {
   .stat-text br {
     display: none;
   }
+
+  .static-chart {
+    width: 430px;
+  }
+
+  .static-chart-stat {
+    width: 245px;
+  }
+
+  .investment .animated-chart {
+    width: 50%;
+    margin-right: 5%;
+  }
+
+  .animated-chart-stats {
+    width: 45%;
+  }
+
+  .animated-chart-stat {
+    margin-top: 22.5px;
+  }
+
+  .animated-chart-stat.one {
+    margin-top: 0;
+  }
+
+  .animated-chart-stat .chart-stat-num {
+    width: auto;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .animated-chart-stat .chart-stat-text {
+    width: auto;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-top: 5.5px;
+  }
+
+  .networks .animated-chart {
+    float: right;
+    width: 45%;
+    margin-left: 5%;
+  }
+
+  .networks .animated-chart-stats {
+    width: 50%;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -859,13 +966,17 @@ h2.section-title {
   }
 
   .pagination {
-    top: 10px;
+    top: 40px;
     transform: none;
   }
 
   .pagination li {
     float: left;
     margin-right: 10px;
+  }
+
+  .section-title br {
+    display: none;
   }
 
   .section-text {
@@ -902,16 +1013,75 @@ h2.section-title {
     margin-bottom: 4%;
   }
 
-  .stat-num {
+  .stat-num,
+  .wifi .stat-num {
     float: none;
     width: auto;
     margin-right: 0;
     margin-bottom: 11.25px;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
-  .stat-text {
+  .stat-text,
+  .wifi .stat-text {
     float: none;
     width: auto;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: normal;
+  }
+
+  .static-chart {
+    width: 60%;
+    margin-right: 5%;
+  }
+
+  .static-chart-stat {
+    width: 35%;
+    margin-top: 22.5px;
+  }
+
+  .static-chart-stat .chart-stat-num {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .static-chart-stat .chart-stat-text {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: normal;
+  }
+
+  .static-chart-stat .chart-stat-text br {
+    display: none;
+  }
+
+  .animated-chart-stat .chart-stat-num {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .animated-chart-stat .chart-stat-text {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: normal;
+  }
+
+  .speed-chart .line {
+    stroke-width: 4;
+  }
+
+  .speed-chart .x.axis text {
+    font-size: 1.5rem;
+  }
+
+  .speed-chart .speed-number {
+    font-size: 36px;
+  }
+
+  .speed-chart .speed-label {
+    font-size: 24px;
   }
 }
 
@@ -919,6 +1089,57 @@ h2.section-title {
   .wrap {
     padding: 22.5px;
   }
+
+  .static-chart {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .static-chart-stat {
+    width: 100%;
+    margin-top: 22.5px;
+    text-align: left;
+  }
+
+  .static-chart-stat .chart-stat-num,
+  .animated-chart-stat .chart-stat-num {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  .investment .animated-chart{
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .networks .animated-chart {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .animated-chart-stats,
+  .networks .animated-chart-stats {
+    width: 100%;
+  }
+
+  .networks .animated-chart-stats {
+    margin-bottom: 22.5px;
+  }
+
+  .animated-chart-stat,
+  .networks .animated-chart-stat {
+    float: left;
+    width: 48%;
+    margin-top: 0;
+  }
+
+  .animated-chart-stat.one {
+    margin-top: 22.5px;
+    margin-right: 4%;
+  }
+
 }
 
 @media all and (max-width: 499px) {
@@ -935,19 +1156,16 @@ h2.section-title {
     margin-top: 22.5px;
   }
 
-  .stat-num {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+  .networks .animated-chart-stat {
+    width: 100%;
+    margin-right: 0;
   }
 
-  .stat-text {
-    font-size: 1.125rem;
-    line-height: 1.25rem;
-    font-weight: normal;
+  .networks .animated-chart-stat.two {
+    margin-top: 11.25px;
   }
 
-  .section-title br {
-    display: none;
+  .networks .animated-chart {
+    max-width: 200px;
   }
-
 }
