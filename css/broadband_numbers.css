@@ -511,12 +511,20 @@ h2.section-title {
   margin-right: 45px;
 }
 
+.investment .stat-num {
+  width: 205px;
+}
+
 .stat-text {
   font-size: 1.5rem;
   line-height: 1.625rem;
   color: #fff;
   float: left;
   width: 350px;
+}
+
+.investment .stat-text {
+  width: 275px;
 }
 
 .chart-source {
@@ -825,10 +833,18 @@ h2.section-title {
     margin-right: 22.5px;
   }
 
+  .investment .stat-num {
+    width: 165px;
+  }
+
   .stat-text {
     font-size: 1.25rem;
     line-height: 1.5rem;
     width: 315px;
+  }
+
+  .investment .stat-text {
+    width: 260px;
   }
 
   .static-chart {
@@ -939,20 +955,30 @@ h2.section-title {
     width: 337.5px;
   }
 
+  .stat-num {
+    width: 95px;
+  }
+
   .stat-text {
-    width: 205px;
+    width: 220px;
   }
 
   .stat-text br {
     display: none;
   }
 
-  .static-chart {
-    width: 430px;
+  .stat-num {
+    font-size: 3rem;
+    line-height: 3rem;
+    width: 95px;
   }
 
-  .static-chart-stat {
-    width: 245px;
+  .investment .stat-num {
+    width: 140px;
+  }
+
+  .investment .stat-text {
+    width: 175px;
   }
 
   .investment .animated-chart {
@@ -1082,22 +1108,21 @@ h2.section-title {
   }
 
   .stat-num,
-  .wifi .stat-num {
+  .wifi .stat-num,
+  .investment .stat-num {
     float: none;
     width: auto;
     margin-right: 0;
     margin-bottom: 11.25px;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
   }
 
   .stat-text,
-  .wifi .stat-text {
+  .wifi .stat-text,
+  .investment .stat-text {
     float: none;
     width: auto;
     font-size: 1.125rem;
     line-height: 1.25rem;
-    font-weight: normal;
   }
 
   .static-chart {
