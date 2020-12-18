@@ -33,15 +33,20 @@ img {
 
 .pagination li {
   list-style: none;
+  display: block;
 }
 
 .pagination a {
   display: block;
   height: 20px;
   margin-bottom: 5px;
-  color: #fff;
+  color: #fff !important;
   position: relative;
   padding: 4px;
+}
+
+.pagination a:hover {
+  color: #fff;
 }
 
 .pagination a:after {
@@ -69,6 +74,7 @@ h1.page-title {
   letter-spacing: -.2px;
   line-height: 3.375rem;
   margin: 0;
+  color: #fff;
 }
 
 h2.story-title {
@@ -103,10 +109,6 @@ h2.story-title {
   z-index: 20;
 }
 
-.intro {
-  padding-top: 10vh;
-}
-
 .content {
   padding-top: 45px;
 }
@@ -136,7 +138,7 @@ h2.story-title {
 
 .top-section-text {
   color: #fff;
-  padding-top: 10vh;
+  padding-top: 14vh;
 }
 
 .top-section-text p {
@@ -369,7 +371,7 @@ h2.story-title {
 }
 
 .story.top {
-  background-image: url('../images/bb_numbers_header_3.jpg');
+  background-image: url('../images/bb_numbers_header_2.jpg');
 }
 
 .adoption-chart .y.axis .tick line,
@@ -427,6 +429,13 @@ h2.section-title {
   color: #fff;
 }
 
+.section-wrap {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .section-text {
   font-size: 1.375rem;
   line-height: 1.625rem;
@@ -441,7 +450,7 @@ h2.section-title {
 .section-link {
   font-size: 1.25rem;
   line-height: 1.5rem;
-  margin-top: 22.5px;
+  margin-top: 45px;
 }
 
 .section-link a {
@@ -470,11 +479,11 @@ h2.section-title {
 }
 
 .section-link a:hover:after {
-  width: 0;
+  background: #5AC9E7;
 }
 
 .section-content {
-  margin-top: 90px;
+  margin-top: 45px;
 }
 
 .stat {
@@ -863,6 +872,33 @@ h2.section-title {
     line-height: 1.5rem;
     margin-top: 5.5px;
   }
+
+  .cost .chart-description {
+    width: 250px;
+    margin-right: 45px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+  }
+
+  .cost .chart-block {
+    width: 645px;
+  }
+
+  .cost .cost-chart {
+    width: 480px;
+  }
+
+  .cost .cost-arrow {
+    width: 142.5px;
+    margin-left: 22.5px;
+  }
+
+  .cost .cost-num {
+    color: #5AC9E7;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
 }
 
 @media all and (min-width: 992px) and (max-width: 1199px) {
@@ -957,6 +993,38 @@ h2.section-title {
 
   .networks .animated-chart-stats {
     width: 50%;
+  }
+
+  .cost .chart-description {
+    width: 190px;
+  }
+
+  .cost .chart-block {
+    width: 485px;
+  }
+
+  .cost .cost-chart {
+    width: 362.5px;
+  }
+
+  .cost .cost-arrow {
+    width: 100px;
+    margin-left: 22.5px;
+  }
+
+  .cost .cost-num {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .cost .cost-label {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .cost .down-arrow {
+    border-width: 0 6px 6px 0;
+    padding: 16px;
   }
 }
 
@@ -1082,6 +1150,12 @@ h2.section-title {
 
   .speed-chart .speed-label {
     font-size: 24px;
+  }
+
+  .cost .chart-description {
+    width: auto;
+    float: none;
+    margin-bottom: 22.5px;
   }
 }
 
