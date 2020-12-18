@@ -523,6 +523,19 @@ h2.section-title {
   width: 350px;
 }
 
+.speed .text-block {
+  font-size: 1.5rem;
+  line-height: 1.625rem;
+  color: #fff;
+  float: left;
+  width: 525px;
+}
+
+.speed .text-block-one,
+.speed .text-block-two {
+  margin-top: 22.5px;
+}
+
 .investment .stat-text {
   width: 275px;
 }
@@ -572,18 +585,21 @@ h2.section-title {
   }
 }
 
-.investment .animated-chart {
+.investment .animated-chart,
+.speed .chart-block {
   float: left;
-  width: 500px;
+  width: 525px;
   margin-right: 90px;
 }
 
-.investment .animation-container {
+.investment .animation-container,
+.speed .animation-container {
   position: relative;
   display: inline-block;
 }
 
-.investment .overlay {
+.investment .overlay,
+.speed .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -594,7 +610,8 @@ h2.section-title {
   justify-content: center;
 }
 
-.investment .map-outline {
+.investment .map-outline,
+.speed .map-outline {
   fill: #E71B4F;
   stroke: #E71B4F;
   stroke-miterlimit:10;
@@ -602,7 +619,8 @@ h2.section-title {
   fill-opacity: 0;
 }
 
-.active.investment svg polygon {
+.active.investment svg polygon,
+.active.speed svg polygon {
   stroke-width: 2px;
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
@@ -843,6 +861,17 @@ h2.section-title {
     width: 315px;
   }
 
+  .speed .chart-block {
+    width: 447.5px;
+    margin-right: 45px;
+  }
+
+  .speed .text-block {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    width: 447.5px;
+  }
+
   .investment .stat-text {
     width: 260px;
   }
@@ -965,6 +994,11 @@ h2.section-title {
 
   .stat-text br {
     display: none;
+  }
+
+  .speed .chart-block,
+  .speed .text-block {
+    width: 337.5px;
   }
 
   .stat-num {
@@ -1125,6 +1159,17 @@ h2.section-title {
     line-height: 1.25rem;
   }
 
+  .speed .chart-block {
+    width: 60%;
+    margin-right: 5%;
+  }
+
+  .speed .text-block {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    width: 35%;
+  }
+
   .static-chart {
     width: 60%;
     margin-right: 5%;
@@ -1237,6 +1282,15 @@ h2.section-title {
   .animated-chart-stat.one {
     margin-top: 22.5px;
     margin-right: 4%;
+  }
+
+  .speed .chart-block {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .speed .text-block {
+    width: 100%;
   }
 
 }
