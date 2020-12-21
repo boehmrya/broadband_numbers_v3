@@ -280,10 +280,6 @@ h2.story-title {
   fill: #fff;
 }
 
-.cost .cost-chart-col svg {
-  max-width: 500px;
-}
-
 .cost .cost-chart-col {
   position: relative;
 }
@@ -477,6 +473,10 @@ h2.section-title {
   float: left;
   width: 525px;
   font-weight: bold;
+}
+
+.cost-chart {
+  margin-top: -50px;
 }
 
 .stat {
@@ -676,11 +676,6 @@ h2.section-title {
   width: 180px;
 }
 
-.cost .cost-chart {
-  float: left;
-  width: 555px;
-}
-
 .cost-chart .x.axis path {
   opacity: 0;
 }
@@ -741,12 +736,6 @@ h2.section-title {
 @media all and (max-width: 1249px) {
   .bb-numbers-pagination {
     right: 10px;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  .cost-chart {
-    min-height: 400px;
   }
 }
 

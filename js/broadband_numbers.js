@@ -66,10 +66,10 @@ jQuery(function($){
             {"year":"2020", "cost": 0.64}];
 
     // dimensions
-    margin = {top: 0, right: 0, bottom: 50, left: 0};
+    margin = {top: 50, right: 0, bottom: 50, left: 0};
     width = 400 - margin.left - margin.right;
-    height = 400 - margin.top - margin.bottom;
-    viewBox = "0 0 400 400";
+    height = 300 - margin.top - margin.bottom;
+    viewBox = "0 0 400 300";
 
     parseDate = d3.time.format("%Y").parse;
 
@@ -140,7 +140,7 @@ jQuery(function($){
         return 'cost-chart-bar-label red';
     })
     .attr("x", function(d) { return x(d.year) + (x.rangeBand() / 2) })
-    .attr("y", function(d){ return height - 100; })
+    .attr("y", function(d){ return height - 30; })
     .text(function(d) { return '$' + d.cost; })
     .attr("text-anchor", "middle");
 
