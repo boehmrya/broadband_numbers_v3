@@ -232,14 +232,19 @@ jQuery(function($){
 
     // dimensions
     margin = {top: 0, right: 0, bottom: 50, left: 0};
-    width = 690 - margin.left - margin.right;
-    height = 500 - margin.top - margin.bottom;
-    viewBox = "0 0 690 500";
+    width = 500 - margin.left - margin.right;
+    height = 400 - margin.top - margin.bottom;
+    viewBox = "0 0 500 400";
 
     parseDate = d3.time.format("%Y").parse;
 
+    // Take each row and put the date column through the parsedate form we've defined above.
+    data.forEach(function(d) {
+      d.year = parseDate(d.year);
+    });
+
     x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .025, 0);
+        .rangeRoundBands([0, width], .05, 0);
 
     y = d3.scale.linear()
         .range([height, 0]);

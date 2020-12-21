@@ -306,6 +306,14 @@ h2.story-title {
   fill: #fff;
 }
 
+.cost .cost-chart-col svg {
+  max-width: 500px;
+}
+
+.cost .cost-chart-col {
+  position: relative;
+}
+
 .adoption-chart .y.axis .tick text,
 .customers-chart .y.axis .tick text {
   transform: translate(-5px, 0px);
@@ -326,7 +334,7 @@ h2.story-title {
   transform: translate(15px, 5px);
 }
 
-.shape-wrap .cost-arrow {
+.shape-wrap .cost-num-wrap{
   position: relative;
 }
 
@@ -503,9 +511,15 @@ h2.section-title {
   margin-top: 45px;
 }
 
+.cost .section-content {
+  margin-top: 90px;
+}
+
 .stat,
 .future-stat-col,
-.future-chart-col {
+.future-chart-col,
+.cost-stat-col,
+.cost-chart-col {
   float: left;
   width: 525px;
   font-weight: bold;
@@ -524,7 +538,8 @@ h2.section-title {
 
 .stat.one,
 .stat.three,
-.future-stat-col {
+.future-stat-col,
+.cost-stat-col {
   margin-right: 90px;
 }
 
@@ -542,7 +557,8 @@ h2.section-title {
   margin-right: 45px;
 }
 
-.future .future-stat-col .stat {
+.future .future-stat-col .stat,
+.cost .cost-stat-col .stat {
   float: none;
   margin-bottom: 45px;
 }
@@ -820,10 +836,10 @@ h2.section-title {
   width: 555px;
 }
 
-.cost .cost-arrow {
-  float: left;
-  width: 150px;
-  margin-left: 45px;
+.cost .cost-num-wrap{
+  position: absolute;
+  top: -60px;
+  right: 90px;
 }
 
 .cost .cost-num {
@@ -942,14 +958,17 @@ h2.section-title {
 
 @media all and (max-width: 1199px) {
   .global-speed-chart,
-  .future-stat-col {
+  .future-stat-col,
+  .cost-stat-col {
     margin-right: 45px;
   }
 
   .global-speed-chart,
   .global-cost-chart,
   .future-stat-col,
-  .future-chart-col {
+  .future-chart-col,
+  .cost-stat-col,
+  .cost-chart-col {
     float: left;
     width: 447.5px;
   }
@@ -1077,9 +1096,10 @@ h2.section-title {
     width: 480px;
   }
 
-  .cost .cost-arrow {
-    width: 142.5px;
-    margin-left: 22.5px;
+  .cost .cost-num-wrap {
+    width: auto;
+    margin-left: 0;
+    right: 20px;
   }
 
   .cost .cost-num {
@@ -1142,7 +1162,9 @@ h2.section-title {
   .global-speed-chart,
   .global-cost-chart,
   .future-stat-col,
-  .future-chart-col {
+  .future-chart-col,
+  .cost-stat-col,
+  .cost-chart-col {
     width: 337.5px;
   }
 
@@ -1221,21 +1243,8 @@ h2.section-title {
     width: 50%;
   }
 
-  .cost .chart-description {
-    width: 190px;
-  }
-
-  .cost .chart-block {
-    width: 485px;
-  }
-
   .cost .cost-chart {
     width: 362.5px;
-  }
-
-  .cost .cost-arrow {
-    width: 100px;
-    margin-left: 22.5px;
   }
 
   .cost .cost-num {
@@ -1246,11 +1255,6 @@ h2.section-title {
   .cost .cost-label {
     font-size: 1.25rem;
     line-height: 1.5rem;
-  }
-
-  .cost .down-arrow {
-    border-width: 0 6px 6px 0;
-    padding: 16px;
   }
 }
 
@@ -1278,7 +1282,7 @@ h2.section-title {
     line-height: 1.5rem;
   }
 
-  .section-content {
+  .cost .section-content {
     margin-top: 45px;
   }
 
@@ -1297,12 +1301,14 @@ h2.section-title {
     margin-right: 4%;
   }
 
-  .future-stat-col {
+  .future-stat-col,
+  .cost-stat-col {
     margin-bottom: 22.5px;
   }
 
   .future-stat-col,
-  .future-chart-col {
+  .future-chart-col,
+  .cost-stat-col {
     width: 100%;
   }
 
@@ -1311,18 +1317,33 @@ h2.section-title {
     width: 48%;
   }
 
+  .cost .cost-num-wrap {
+    position: static;
+  }
+
+  .cost .cost-num {
+    margin-bottom: 0;
+  }
+
   .stat,
   .future .future-stat-col .stat,
   .future .future-chart-col .donut-chart,
-  .future .future-chart-col .stat {
+  .future .future-chart-col .stat,
+  .cost .cost-stat-col .stat,
+  .cost .cost-chart-col {
     width: 48%;
     float: left;
+  }
+
+  .cost .cost-chart-col .cost-chart {
+    width: 100%;
   }
 
   .stat.one,
   .stat.three,
   .future-stat-col .stat.one,
-  .future .future-chart-col .donut-chart {
+  .future .future-chart-col .donut-chart,
+  .cost .cost-stat-col .stat.one {
     margin-right: 4%;
   }
 
@@ -1333,14 +1354,17 @@ h2.section-title {
   .stat.one,
   .stat.two,
   .future-stat-col .stat.one,
-  .future-stat-col .stat.two {
+  .future-stat-col .stat.two,
+  .cost-stat-col .stat.one,
+  .cost-stat-col .stat.two {
     margin-bottom: 4%;
   }
 
   .stat-num,
   .wifi .stat-num,
   .investment .stat-num,
-  .future .stat-num {
+  .future .stat-num,
+  .cost .stat-num {
     float: none;
     width: auto;
     margin-right: 0;
@@ -1350,7 +1374,8 @@ h2.section-title {
   .stat-text,
   .wifi .stat-text,
   .investment .stat-text,
-  .future .stat-text {
+  .future .stat-text,
+  .cost .stat-text {
     float: none;
     width: auto;
     font-size: 1.125rem;
@@ -1438,7 +1463,10 @@ h2.section-title {
 
   .global-speed-chart {
     margin-right: 0;
-    margin-bottom: 22.5px;
+  }
+
+  .global-cost-chart-wrap {
+    margin-top: 22.5px;
   }
 
   .global-speed-chart,
@@ -1532,5 +1560,9 @@ h2.section-title {
 
   .networks .animated-chart {
     max-width: 200px;
+  }
+
+  .cost .cost-chart-col {
+    width: 100%;
   }
 }
