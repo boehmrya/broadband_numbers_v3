@@ -122,10 +122,17 @@ h2.story-title {
 .chart-block::after,
 .section-content::after,
 .stat::after,
-.animated-chart-stat::after {
+.animated-chart-stat::after,
+.global-chart-wrap::after,
+.future .stat::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.global-chart-wrap {
+  display: flex;
+  align-items: baseline;
 }
 
 .speed-chart {
@@ -213,6 +220,16 @@ h2.story-title {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.global-speed-chart-bar.red,
+.global-cost-chart-bar.red {
+  fill: #E71B4F;
+}
+
+.global-speed-chart-bar.blue,
+.global-cost-chart-bar.blue {
+  fill: #5AC9E7;
 }
 
 .speed-chart .axis path,
@@ -486,14 +503,28 @@ h2.section-title {
   margin-top: 45px;
 }
 
-.stat {
+.stat,
+.future-stat-col,
+.future-chart-col {
   float: left;
   width: 525px;
   font-weight: bold;
 }
 
+.global-speed-chart {
+  margin-right: 90px;
+}
+
+.global-speed-chart,
+.global-cost-chart {
+  float: left;
+  width: 525px;
+  margin-bottom: 22.5px;
+}
+
 .stat.one,
-.stat.three {
+.stat.three,
+.future-stat-col {
   margin-right: 90px;
 }
 
@@ -511,6 +542,48 @@ h2.section-title {
   margin-right: 45px;
 }
 
+.future .future-stat-col .stat {
+  float: none;
+  margin-bottom: 45px;
+}
+
+.future .stat-num {
+  width: 185px;
+}
+
+.future .future-chart-col .donut-chart {
+  float: left;
+  width: 270px;
+  margin-right: 45px;
+}
+
+.future .donut-chart .color0,
+.future .donut-chart .color1 {
+  stroke-width: 2;
+  stroke: #5AC9E7;
+  fill: transparent;
+}
+
+.future .donut-chart .color0 {
+  fill: #5AC9E7;
+}
+
+
+.future .future-chart-col .stat {
+  float: left;
+  width: 210px;
+}
+
+.future .future-chart-col .stat-num,
+.future .future-chart-col .stat-text {
+  float: none;
+  width: auto;
+}
+
+.future .future-chart-col .stat-text {
+  margin-top: 11.25px;
+}
+
 .investment .stat-num {
   width: 205px;
 }
@@ -521,6 +594,10 @@ h2.section-title {
   color: #fff;
   float: left;
   width: 350px;
+}
+
+.future .stat-text {
+  width: 295px;
 }
 
 .speed .text-block {
@@ -717,7 +794,6 @@ h2.section-title {
 
 .wifi .stat-num {
   width: 180px;
-  color: #fff;
 }
 
 .wifi .stat-text {
@@ -784,6 +860,49 @@ h2.section-title {
   opacity: 0;
 }
 
+.global .chart-bar-label,
+.global .chart-bar-data {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.5s;
+  transition-timing-function: ease;
+}
+
+.global .chart-bar-label {
+  font-size: 2rem;
+}
+
+.global .chart-bar-label.reveal,
+.global .chart-bar-data.reveal {
+  opacity: 1;
+}
+
+.global .chart-bar-data.white {
+  fill: #fff;
+}
+
+.global .chart-bar-label.red {
+  fill: #E71B4F
+}
+
+.global .chart-bar-label.blue {
+  fill: #5AC9E7;
+}
+
+.global .chart-bar-data.blue {
+  fill: #343F49;
+}
+
+.global-chart-label {
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
 
 @keyframes outline{
   to{
@@ -822,16 +941,40 @@ h2.section-title {
 }
 
 @media all and (max-width: 1199px) {
+  .global-speed-chart,
+  .future-stat-col {
+    margin-right: 45px;
+  }
+
+  .global-speed-chart,
+  .global-cost-chart,
+  .future-stat-col,
+  .future-chart-col {
+    float: left;
+    width: 447.5px;
+  }
+
   .stat {
     width: 447.5px;
   }
 
-  .wifi .stat-num {
+  .wifi .stat-num,
+  .future .stat-num {
     width: 150px;
   }
 
-  .wifi .stat-text {
+  .wifi .stat-text,
+  .future .stat-text {
     width: 275px;
+  }
+
+  .future .future-chart-col .donut-chart {
+    width: 230px;
+    margin-right: 22.5px;
+  }
+
+  .future .future-chart-col .stat {
+    width: 195px;
   }
 
   .stat.one,
@@ -976,8 +1119,31 @@ h2.section-title {
     line-height: 2.25rem;
   }
 
+  .future .stat-num {
+    width: 130px;
+  }
+
+  .future .stat-text {
+    width: 185px;
+  }
+
+  .future .future-chart-col .donut-chart {
+    width: 175px;
+  }
+
+  .future .future-chart-col .stat {
+    width: 140px;
+  }
+
   .wifi .stat-text {
     width: 165px;
+  }
+
+  .global-speed-chart,
+  .global-cost-chart,
+  .future-stat-col,
+  .future-chart-col {
+    width: 337.5px;
   }
 
   .stat {
@@ -1127,23 +1293,54 @@ h2.section-title {
     display: none;
   }
 
-  .stat {
-    width: 48%;
-  }
-
-  .stat.one,
-  .stat.three {
+  .global-speed-chart {
     margin-right: 4%;
   }
 
+  .future-stat-col {
+    margin-bottom: 22.5px;
+  }
+
+  .future-stat-col,
+  .future-chart-col {
+    width: 100%;
+  }
+
+  .global-speed-chart,
+  .global-cost-chart {
+    width: 48%;
+  }
+
+  .stat,
+  .future .future-stat-col .stat,
+  .future .future-chart-col .donut-chart,
+  .future .future-chart-col .stat {
+    width: 48%;
+    float: left;
+  }
+
   .stat.one,
-  .stat.two {
+  .stat.three,
+  .future-stat-col .stat.one,
+  .future .future-chart-col .donut-chart {
+    margin-right: 4%;
+  }
+
+  .future .future-chart-col .donut-chart svg {
+    max-width: 250px;
+  }
+
+  .stat.one,
+  .stat.two,
+  .future-stat-col .stat.one,
+  .future-stat-col .stat.two {
     margin-bottom: 4%;
   }
 
   .stat-num,
   .wifi .stat-num,
-  .investment .stat-num {
+  .investment .stat-num,
+  .future .stat-num {
     float: none;
     width: auto;
     margin-right: 0;
@@ -1152,7 +1349,8 @@ h2.section-title {
 
   .stat-text,
   .wifi .stat-text,
-  .investment .stat-text {
+  .investment .stat-text,
+  .future .stat-text {
     float: none;
     width: auto;
     font-size: 1.125rem;
@@ -1232,6 +1430,20 @@ h2.section-title {
 @media all and (max-width: 599px) {
   .wrap {
     padding: 22.5px;
+  }
+
+  .global-chart-wrap {
+    display: block;
+  }
+
+  .global-speed-chart {
+    margin-right: 0;
+    margin-bottom: 22.5px;
+  }
+
+  .global-speed-chart,
+  .global-cost-chart {
+    width: 100%;
   }
 
   .static-chart {
