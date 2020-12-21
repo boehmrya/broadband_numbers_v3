@@ -256,7 +256,7 @@ h2.story-title {
 }
 
 .cost-chart-bar-label {
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 2rem;
   font-weight: bold;
   opacity: 0;
@@ -276,7 +276,9 @@ h2.story-title {
 
 .cost-chart .tick text {
   transform: translate(0, 15px);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: normal;
   fill: #fff;
 }
 
@@ -491,6 +493,13 @@ h2.section-title {
   margin-right: 90px;
 }
 
+.global .chart-label {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  fill: #fff;
+}
+
 .global-speed-chart,
 .global-cost-chart {
   float: left;
@@ -682,7 +691,7 @@ h2.section-title {
 
 .global .chart-bar-label,
 .global .chart-bar-data {
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 2rem;
   font-weight: bold;
   opacity: 0;

@@ -67,9 +67,9 @@ jQuery(function($){
 
     // dimensions
     margin = {top: 50, right: 0, bottom: 50, left: 0};
-    width = 400 - margin.left - margin.right;
+    width = 525 - margin.left - margin.right;
     height = 300 - margin.top - margin.bottom;
-    viewBox = "0 0 400 300";
+    viewBox = "0 0 525 300";
 
     parseDate = d3.time.format("%Y").parse;
 
@@ -118,7 +118,7 @@ jQuery(function($){
         .attr("height", height / 2);
 
   bar.transition()
-      .duration(2000)
+      .duration(1500)
       .ease("ease-in-out")
       .attr("y", function(d) { return y(d.cost); })
       .attr("height", function(d) { return height - y(d.cost); })
@@ -168,10 +168,10 @@ jQuery(function($){
             {"place":"Global", "speed": 85.7}];
 
     // dimensions
-    margin = {top: 60, right: 0, bottom: 0, left: 0};
-    width = 600 - margin.left - margin.right;
-    height = 300 - margin.top - margin.bottom;
-    viewBox = "0 0 600 300";
+    margin = {top: 60, right: 0, bottom: 60, left: 0};
+    width = 525 - margin.left - margin.right;
+    height = 322.5 - margin.top - margin.bottom;
+    viewBox = "0 0 525 322.5";
 
     x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .025, 0);
@@ -262,7 +262,7 @@ jQuery(function($){
       .text(function(d) { return d.speed + " Mbps"; })
       .attr("text-anchor", "middle");
 
-    svg.selectAll(".global-speed-chart chart-bar-label")
+    svg.selectAll(".global-speed-chart .chart-bar-label")
       .data(data)
       .enter()
       .append("text")
@@ -275,6 +275,14 @@ jQuery(function($){
       .attr("x", function(d) { return x(d.place) + (x.rangeBand() / 2) })
       .attr("y", function(d){ return y(d.speed) - 30; })
       .text(function(d) { return d.place; })
+      .attr("text-anchor", "middle");
+
+      // chart label
+    svg.append("text")
+      .attr("class", "chart-label")
+      .attr("x", function(d) { return (width / 2) })
+      .attr("y", function(d){ return height + 50; })
+      .text("Average Download Speed")
       .attr("text-anchor", "middle");
 
   }
@@ -290,10 +298,10 @@ jQuery(function($){
             {"place":"Europe", "cost": 0.34}];
 
     // dimensions
-    margin = {top: 60, right: 0, bottom: 0, left: 0};
-    width = 600 - margin.left - margin.right;
-    height = 200 - margin.top - margin.bottom;
-    viewBox = "0 0 600 200";
+    margin = {top: 100, right: 0, bottom: 60, left: 0};
+    width = 525 - margin.left - margin.right;
+    height = 262.5 - margin.top - margin.bottom;
+    viewBox = "0 0 525 262.5";
 
     x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .025, 0);
@@ -398,6 +406,15 @@ jQuery(function($){
       .attr("y", function(d){ return y(d.cost) - 30; })
       .text(function(d) { return d.place; })
       .attr("text-anchor", "middle");
+
+      // chart label
+    svg.append("text")
+      .attr("class", "chart-label")
+      .attr("x", function(d) { return (width / 2) })
+      .attr("y", function(d){ return height + 50; })
+      .text("Average Price Per Mbps")
+      .attr("text-anchor", "middle");
+
   }
 
 
