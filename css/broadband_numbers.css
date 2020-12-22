@@ -74,6 +74,10 @@ img {
   box-shadow: inset 0 0 0 5px;
 }
 
+.hide-pagination .bb-numbers-pagination {
+  display: none;
+}
+
 h1.page-title {
   font-size: 3rem;
   letter-spacing: -.2px;
@@ -282,6 +286,19 @@ h2.story-title {
   fill: #fff;
 }
 
+.cost-chart .cost-percent-label {
+  fill: #5AC9E7;
+  font-size: 4.375rem;
+  line-height: 4rem;
+  letter-spacing: -0.125rem;
+}
+
+.cost-chart .cost-percent-label-text {
+  fill: #5AC9E7;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
 .cost .cost-chart-col {
   position: relative;
 }
@@ -361,21 +378,44 @@ h2.story-title {
   font-size: 1.125rem;
 }
 
-.top .down-arrow-wrap {
+.down-arrow-wrap {
   position: absolute;
   bottom: 10vh;
-  z-index: 10;
+  z-index: 20;
   width: 100%;
   text-align: center;
 }
 
-.top .down-arrow {
+.down-arrow {
   border: solid #fff;
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 12px;
   margin-top: 40px;
   transform: translateY(0) rotate(45deg);
+}
+
+.up-arrow-wrap {
+  position: absolute;
+  bottom: 30px;
+  z-index: 20;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.hide-pagination .up-arrow-wrap {
+  display: block;
+}
+
+.up-arrow {
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 12px;
+  margin-top: 40px;
+  transform: translateY(0) rotate(225deg);
+  cursor: pointer;
 }
 
 .story {

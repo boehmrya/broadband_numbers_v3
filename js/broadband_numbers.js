@@ -14,10 +14,19 @@ jQuery(function($){
     updateHash: true,
     touchScroll:true,
     before:function(index, elements) {
-      // disable all charts
-      removeCharts();
 
-      // build chart based on story
+      // disable charts
+      var inFooter = false;
+      if (index == 8) {
+        inFooter = true;
+        $('body').addClass('hide-pagination');
+      }
+      else {
+        $('body').removeClass('hide-pagination');
+      }
+      removeCharts(inFooter);
+
+      // build charts based on story
       if (index == 4) {
         globalSpeedChart()
         globalCostChart();
@@ -46,8 +55,12 @@ jQuery(function($){
     afterRender:function() {}
   });
 
-  $('.top .down-arrow').on('click', function() {
+  $('.down-arrow').on('click', function() {
     $.scrollify.move("#adoption");
+  });
+
+  $('.up-arrow').on('click', function() {
+    $.scrollify.move("#cost");
   });
 
   $('.bb-numbers-pagination a').on('click', function() {
@@ -144,18 +157,21 @@ jQuery(function($){
     .text(function(d) { return '$' + d.cost; })
     .attr("text-anchor", "middle");
 
-    $('.shape-wrap .box').addClass('full');
+    // chart label
+  svg.append("text")
+    .attr("class", "cost-percent-label")
+    .attr("x", function(d) { return (x.rangeBand() * 1.55) })
+    .attr("y", 0)
+    .text("98%")
+    .attr("text-anchor", "middle");
 
-    $('.cost-percent-num .num').each(function () {
-      var $this = $(this);
-      $({ Counter: 0 }).animate({ Counter: $this.text() }, {
-        duration: 2000,
-        easing: 'swing',
-        step: function () {
-          $this.text(Math.ceil(this.Counter));
-        }
-      });
-    });
+    // chart label
+  svg.append("text")
+    .attr("class", "cost-percent-label-text")
+    .attr("x", function(d) { return (x.rangeBand() * 1.55) })
+    .attr("y", 30)
+    .text("Decrease")
+    .attr("text-anchor", "middle");
   }
 
   // global speed chart
@@ -476,8 +492,10 @@ jQuery(function($){
 
 
   // wrapper function to remove charts on section transitions
-  function removeCharts() {
-    removeCostChart();
+  function removeCharts(inFooter) {
+    if (inFooter == false) {
+      removeCostChart();
+    }
     removeGlobalSpeedChart();
     removeGlobalCostChart();
     removeDonutChart();
