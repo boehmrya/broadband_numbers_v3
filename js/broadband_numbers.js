@@ -1,5 +1,43 @@
 jQuery(function($){
 
+  function resizeStatCol(col) {
+    $('.story').each(function() {
+      var thisStory = $(this);
+      var thisCol = thisStory.find(col);
+      var maxWidth = 0;
+      thisCol.each(function() {
+        var statNumWidth = $(this).children('.stat-num').width();
+        if (statNumWidth > maxWidth) {
+          maxWidth = statNumWidth;
+        }
+      });
+      thisCol.children('.stat-num').width(maxWidth);
+    });
+  }
+
+  $(window).on('load resize', function() {
+    var throttled = false;
+    var delay = 250;
+
+    // only run if we're not throttled
+    if (!throttled) {
+      var w = window.innerWidth;
+
+      if (w > 599) {
+        resizeStatCol('.stat.left-col');
+        resizeStatCol('.stat.right-col');
+      }
+
+      // we're throttled!
+      throttled = true;
+
+      // set a timeout to un-throttle
+      setTimeout(function() {
+        throttled = false;
+      }, delay);
+    }
+  });
+
   $.scrollify({
     section : ".story-wrap .story",
     sectionName : "section-name",
@@ -158,12 +196,17 @@ jQuery(function($){
     .attr("text-anchor", "middle");
 
     // chart label
-  svg.append("text")
+  var costLabel = svg.append("text")
     .attr("class", "cost-percent-label")
     .attr("x", function(d) { return (x.rangeBand() * 1.55) })
     .attr("y", 0)
-    .text("98%")
+    .text("98")
     .attr("text-anchor", "middle");
+
+  costLabel.append("tspan")
+    .attr("class", "cost-percent-label-sign")
+    .attr("dx", "3px")
+    .text("%");
 
     // chart label
   svg.append("text")
@@ -314,10 +357,10 @@ jQuery(function($){
             {"place":"Europe", "cost": 0.34}];
 
     // dimensions
-    margin = {top: 100, right: 0, bottom: 60, left: 0};
+    margin = {top: 60, right: 0, bottom: 60, left: 0};
     width = 525 - margin.left - margin.right;
-    height = 262.5 - margin.top - margin.bottom;
-    viewBox = "0 0 525 262.5";
+    height = 232.5 - margin.top - margin.bottom;
+    viewBox = "0 0 525 232.5";
 
     x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .025, 0);

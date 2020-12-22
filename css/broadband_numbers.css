@@ -132,7 +132,9 @@ h2.story-title {
 .section-content::after,
 .stat::after,
 .global-chart-wrap::after,
-.future .stat::after {
+.future .stat::after,
+.cost-stat-col::after,
+.future-chart-col::after {
   content: "";
   clear: both;
   display: table;
@@ -141,14 +143,6 @@ h2.story-title {
 .global-chart-wrap {
   display: flex;
   align-items: baseline;
-}
-
-.speed-chart {
-  width: 100%;
-}
-
-.speed-chart svg {
-  overflow: visible;
 }
 
 .top-section-text {
@@ -293,6 +287,10 @@ h2.story-title {
   letter-spacing: -0.125rem;
 }
 
+.cost-chart .cost-percent-label-sign {
+  font-weight: normal;
+}
+
 .cost-chart .cost-percent-label-text {
   fill: #5AC9E7;
   font-size: 1.5rem;
@@ -423,6 +421,18 @@ h2.story-title {
   position: relative;
 }
 
+.sign {
+  font-weight: normal;
+}
+
+.sign.prefix {
+  margin-right: 3px;
+}
+
+.sign.suffix {
+  margin-left: 3px;
+}
+
 .story.blue {
   background-color: #222943;
 }
@@ -521,12 +531,17 @@ h2.section-title {
   margin-top: -50px;
 }
 
-.stat {
-  display: flex;
+.cost-chart-title {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 11.25px;
+  font-weight: normal;
 }
 
-.stat-text {
-  width: auto;
+.stat {
+  display: flex;
 }
 
 .global-speed-chart {
@@ -544,7 +559,6 @@ h2.section-title {
 .global-cost-chart {
   float: left;
   width: 525px;
-  margin-bottom: 22.5px;
 }
 
 .stat.one,
@@ -566,6 +580,7 @@ h2.section-title {
   float: left;
   margin-right: 45px;
   letter-spacing: -0.125rem;
+  flex: none;
 }
 
 .future .future-stat-col .stat,
@@ -574,14 +589,11 @@ h2.section-title {
   margin-bottom: 45px;
 }
 
-.future .stat-num {
-  width: 185px;
-}
-
 .future .future-chart-col .donut-chart {
   float: left;
   width: 230px;
   margin-right: 45px;
+  min-height: 100px;
 }
 
 .future .donut-chart .color0,
@@ -616,20 +628,12 @@ h2.section-title {
   margin-top: 11.25px;
 }
 
-.investment .stat-num {
-  width: 205px;
-}
-
 .stat-text {
   font-size: 1.5rem;
   line-height: 1.625rem;
   color: #fff;
   float: left;
-  width: 350px;
-}
-
-.future .stat-text {
-  width: 295px;
+  width: auto;
 }
 
 .speed .text-block {
@@ -689,18 +693,6 @@ h2.section-title {
   display: inline-block;
 }
 
-.investment .overlay,
-.speed .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .speed .map-outline {
   fill: #E71B4F;
   stroke: #E71B4F;
@@ -719,10 +711,6 @@ h2.section-title {
   animation-name: outline, fillin;
   animation-duration: 5s, .5s;
   animation-delay: 0s, 4s;
-}
-
-.wifi .stat-num {
-  width: 180px;
 }
 
 .cost-chart .x.axis path {
@@ -809,11 +797,6 @@ h2.section-title {
     width: 447.5px;
   }
 
-  .wifi .stat-num,
-  .future .stat-num {
-    width: 150px;
-  }
-
   .future .future-chart-col .donut-chart {
     width: 200px;
     margin-right: 22.5px;
@@ -836,12 +819,7 @@ h2.section-title {
   .stat-num {
     font-size: 3.5rem;
     line-height: 3.5rem;
-    width: 110px;
     margin-right: 22.5px;
-  }
-
-  .investment .stat-num {
-    width: 165px;
   }
 
   .stat-text {
@@ -892,10 +870,6 @@ h2.section-title {
     line-height: 2.25rem;
   }
 
-  .future .stat-num {
-    width: 130px;
-  }
-
   .future .future-chart-col .donut-chart {
     width: 150px;
   }
@@ -917,10 +891,6 @@ h2.section-title {
     width: 337.5px;
   }
 
-  .stat-num {
-    width: 95px;
-  }
-
   .stat-text br {
     display: none;
   }
@@ -933,11 +903,6 @@ h2.section-title {
   .stat-num {
     font-size: 3rem;
     line-height: 3rem;
-    width: 95px;
-  }
-
-  .investment .stat-num {
-    width: 140px;
   }
 
   .investment .animated-chart {
@@ -978,6 +943,12 @@ h2.section-title {
 @media all and (max-width: 767px) {
   .wrap {
     width: auto;
+    padding: 22.5px;
+  }
+
+  .section-wrap {
+    left: 22.5px;
+    right: 22.5px;
   }
 
   .bb-numbers-pagination {
@@ -1014,7 +985,17 @@ h2.section-title {
     display: none;
   }
 
-  .global-speed-chart {
+  .global-speed-chart-wrap,
+  .global-cost-chart-wrap {
+    width: 48%;
+  }
+
+  .global-speed-chart,
+  .global-cost-chart {
+    width: 100%;
+  }
+
+  .global-speed-chart-wrap {
     margin-right: 4%;
   }
 
@@ -1029,11 +1010,6 @@ h2.section-title {
     width: 100%;
   }
 
-  .global-speed-chart,
-  .global-cost-chart {
-    width: 48%;
-  }
-
   .future .future-chart-col .donut-chart {
     width: 100%;
     max-width: 200px;
@@ -1042,10 +1018,27 @@ h2.section-title {
   .stat,
   .future .future-stat-col .stat,
   .future .future-chart-col .stat,
-  .cost .cost-stat-col .stat,
-  .cost .cost-chart-col {
+  .cost .cost-stat-col .stat {
     width: 48%;
     float: left;
+  }
+
+  .cost .cost-chart-col {
+    width: 100%;
+    max-width: 525px;
+    margin: 22.5px auto 0px auto;
+    float: none;
+    clear: both;
+  }
+
+  .cost-chart .cost-percent-label {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .cost-chart .cost-percent-label-text {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
   }
 
   .cost .cost-chart-col .cost-chart {
@@ -1073,11 +1066,7 @@ h2.section-title {
     margin-bottom: 4%;
   }
 
-  .stat-text,
-  .wifi .stat-text,
-  .investment .stat-text,
-  .future .stat-text,
-  .cost .stat-text {
+  .stat-text {
     font-size: 1.125rem;
     line-height: 1.25rem;
   }
@@ -1095,16 +1084,17 @@ h2.section-title {
 }
 
 @media all and (max-width: 599px) {
-  .wrap {
-    padding: 22.5px;
-  }
-
   .global-chart-wrap {
     display: block;
   }
 
-  .global-speed-chart {
+  .global-speed-chart-wrap {
     margin-right: 0;
+  }
+
+  .global-speed-chart-wrap,
+  .global-cost-chart-wrap {
+    width: 100%;
   }
 
   .global-cost-chart-wrap {
@@ -1116,16 +1106,24 @@ h2.section-title {
     width: 100%;
   }
 
-  .stat-num,
-  .wifi .stat-num,
-  .investment .stat-num,
-  .future .stat-num,
-  .cost .stat-num {
-    margin-bottom: 11.25px;
+  .stat-num {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 5.5px;
   }
 
   .stat {
     display: block;
+  }
+
+  .speed .chart-block {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 22.5px;
+  }
+
+  .speed .text-block {
+    width: 100%;
   }
 
 }
