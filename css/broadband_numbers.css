@@ -285,6 +285,7 @@ h2.story-title {
   font-size: 4.375rem;
   line-height: 4rem;
   letter-spacing: -0.125rem;
+  font-weight: bold;
 }
 
 .cost-chart .cost-percent-label-sign {
@@ -524,7 +525,6 @@ h2.section-title {
 .cost-chart-col {
   float: left;
   width: 525px;
-  font-weight: bold;
 }
 
 .cost-chart {
@@ -581,6 +581,7 @@ h2.section-title {
   margin-right: 45px;
   letter-spacing: -0.125rem;
   flex: none;
+  font-weight: bold;
 }
 
 .future .future-stat-col .stat,
